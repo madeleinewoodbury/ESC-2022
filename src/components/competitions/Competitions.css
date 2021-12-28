@@ -9,8 +9,8 @@
 }
 
 .competitions .content .container .btn-container {
-  margin: 1.5rem 0;
-  justify-content: center;
+  margin: 1.5rem 1rem 1rem 0;
+  justify-content: right;
   align-items: center;
 }
 

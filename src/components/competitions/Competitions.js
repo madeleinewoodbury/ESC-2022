@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCompetitions } from '../../actions/competitions';
 import Spinner from '../layout/Spinner';
@@ -9,10 +9,24 @@ const Competitions = () => {
   const dispatch = useDispatch();
   const competitionsList = useSelector((state) => state.competitions);
   const { competitions, loading } = competitionsList;
+  const [sort, toggleSort] = useState(true);
 
   useEffect(() => {
     dispatch(getCompetitions());
   }, [dispatch]);
+
+  const getResults = () => {
+    let results = [];
+    if (sort) {
+      results = competitions.sort((a, b) => (a.year < b.year ? 1 : -1));
+    } else {
+      results = competitions.sort((a, b) => (a.year > b.year ? 1 : -1));
+    }
+
+    return results.map((competition) => (
+      <CompetitionCard key={competition._id} competition={competition} />
+    ));
+  };
 
   return (
     <Fragment>
@@ -24,14 +38,28 @@ const Competitions = () => {
             <div className='overlay'>
               <div className='container'>
                 <div className='container'>
+                  <div className='btn-container'>
+                    <button
+                      onClick={(e) => toggleSort(!sort)}
+                      className='btn btn-light'
+                    >
+                      Sort{' '}
+                      {sort ? (
+                        <i className='fas fa-arrow-up'></i>
+                      ) : (
+                        <i className='fas fa-arrow-down'></i>
+                      )}
+                    </button>
+                  </div>
                   <div className='card-container'>
-                    {competitions.length > 0 &&
+                    {getResults()}
+                    {/* {competitions.length > 0 &&
                       competitions.map((competition) => (
                         <CompetitionCard
                           key={competition._id}
                           competition={competition}
                         />
-                      ))}
+                      ))} */}
                   </div>
                 </div>
               </div>
