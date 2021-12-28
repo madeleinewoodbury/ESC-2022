@@ -22,7 +22,7 @@
 .competitions .card {
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 20%;
 }
 
 .competitions .alt-icon {
@@ -97,7 +97,19 @@
   color: var(--secondary-color);
 }
 
+@media screen and (min-width: 1500px) {
+  .competitions .card {
+    width: 12.5%;
+  }
+}
+
 @media screen and (max-width: 1200px) {
+  .competitions .card {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .competitions .card {
     width: 33.3%;
   }
