@@ -1,12 +1,12 @@
-.participants .banner {
+/* .participants .banner {
   width: 25%;
   position: fixed;
-}
+} */
 
 .participants .content {
   column-gap: 0px;
-  width: 75%;
-  margin-left: 25%;
+  width: 100%;
+  /* margin-left: 25%; */
 }
 
 .participants .content .container {

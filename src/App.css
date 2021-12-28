@@ -40,7 +40,7 @@ li {
   height: 100vh;
 }
 
-.background .banner {
+/* .background .banner {
   background: url('./img/banner.svg') no-repeat center center/cover;
   width: 30%;
   position: fixed;
@@ -48,14 +48,15 @@ li {
   left: 0;
   bottom: 0;
   z-index: 10;
-}
+} */
 
 .background .content {
   background: url('./img/esc-stage-background.jpg') center center/cover fixed;
   top: 10vh;
   left: 0;
-  width: 70%;
-  margin-left: 30%;
+  /* width: 70%; */
+  /* margin-left: 30%; */
+  width: 100%;
   position: relative;
   height: 90vh;
 }
@@ -260,21 +261,21 @@ button {
 }
 
 @media screen and (max-width: 1200px) {
-  .background .banner {
+  /* .background .banner {
     width: 25%;
   }
 
   .background .content {
     width: 75%;
     margin-left: 25%;
-  }
+  } */
 
   .hide-md {
     display: none;
   }
 }
 
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
   .background .banner {
     display: none;
   }
@@ -283,7 +284,7 @@ button {
     width: 100%;
     margin-left: 0;
   }
-}
+} */
 
 @media screen and (max-width: 650px) {
   .lead {

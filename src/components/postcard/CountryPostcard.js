@@ -1,17 +1,17 @@
-import React, { Fragment, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getCountry } from '../../actions/countries'
-import Spinner from '../layout/Spinner'
-import './Postcard.css'
+import React, { Fragment, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCountry } from '../../actions/countries';
+import Spinner from '../layout/Spinner';
+import './Postcard.css';
 
 const CountryPostcard = ({ match, history }) => {
-  const dispatch = useDispatch()
-  const countryDetail = useSelector((state) => state.countries)
-  const { country, loading } = countryDetail
+  const dispatch = useDispatch();
+  const countryDetail = useSelector((state) => state.countries);
+  const { country, loading } = countryDetail;
 
   useEffect(() => {
-    dispatch(getCountry(match.params.id, history))
-  }, [dispatch, match.params.id, history])
+    dispatch(getCountry(match.params.id, history));
+  }, [dispatch, match.params.id, history]);
 
   return (
     <Fragment>
@@ -20,7 +20,7 @@ const CountryPostcard = ({ match, history }) => {
       ) : (
         <Fragment>
           <div className='postcard-container'>
-            <div className='banner'></div>
+            {/* <div className='banner'></div> */}
             <div className='postcard'>
               <div className='postcard-top'>
                 <div className='postcard-hero'>
@@ -101,7 +101,7 @@ const CountryPostcard = ({ match, history }) => {
         </Fragment>
       )}
     </Fragment>
-  )
-}
+  );
+};
 
-export default CountryPostcard
+export default CountryPostcard;

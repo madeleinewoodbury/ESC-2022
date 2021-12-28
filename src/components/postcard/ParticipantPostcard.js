@@ -1,42 +1,42 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getParticipant, voteOnParticipant } from '../../actions/participants'
-import { getIcon } from '../../icons'
-import { Link } from 'react-router-dom'
-import Spinner from '../layout/Spinner'
-import './Postcard.css'
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getParticipant, voteOnParticipant } from '../../actions/participants';
+import { getIcon } from '../../icons';
+import { Link } from 'react-router-dom';
+import Spinner from '../layout/Spinner';
+import './Postcard.css';
 
 const ParticipantPostcard = ({ match, history }) => {
-  const dispatch = useDispatch()
-  const participantDetail = useSelector((state) => state.participants)
-  const auth = useSelector((state) => state.auth)
-  const { participant, loading } = participantDetail
-  const { user, isAuthenticated } = auth
+  const dispatch = useDispatch();
+  const participantDetail = useSelector((state) => state.participants);
+  const auth = useSelector((state) => state.auth);
+  const { participant, loading } = participantDetail;
+  const { user, isAuthenticated } = auth;
 
-  const [formData, setFormData] = useState('')
+  const [formData, setFormData] = useState('');
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    dispatch(voteOnParticipant(match.params.id, formData))
-  }
+    e.preventDefault();
+    dispatch(voteOnParticipant(match.params.id, formData));
+  };
 
   useEffect(() => {
-    dispatch(getParticipant(match.params.id, history))
+    dispatch(getParticipant(match.params.id, history));
     if (user) {
       let vote = user.votes.filter(
         (vote) => vote.participant.id === match.params.id
-      )
+      );
       if (vote.length > 0) {
-        setFormData(vote[0].vote)
+        setFormData(vote[0].vote);
       }
     }
-  }, [dispatch, match.params.id, history, user])
+  }, [dispatch, match.params.id, history, user]);
 
   return loading || participant === null ? (
     <Spinner />
   ) : (
     <div className='postcard-container'>
-      <div className='banner'></div>
+      {/* <div className='banner'></div> */}
       <div className='postcard'>
         <div className='postcard-top'>
           <div className='postcard-hero'>
@@ -146,7 +146,7 @@ const ParticipantPostcard = ({ match, history }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ParticipantPostcard
+export default ParticipantPostcard;

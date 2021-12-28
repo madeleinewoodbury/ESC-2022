@@ -3,23 +3,23 @@ import './Info.css';
 
 const About = () => {
   return (
-    <div className="info-container">
-      <div className="banner"></div>
-      <div className="info">
-        <div className="container-inner">
+    <div className='info-container'>
+      {/* <div className="banner"></div> */}
+      <div className='info'>
+        <div className='container-inner'>
           <header>
-            <h1 className="large">About</h1>
+            <h1 className='large'>About</h1>
 
-            <p className="lead">
+            <p className='lead'>
               New to the Eurovision Song Contest, or feel the need to refresh
               your memory? Let's explain how it works. In a nutshell.
             </p>
           </header>
           <section>
-            <div className="img-container">
+            <div className='img-container'>
               <img
-                src="https://eurovision.tv/image/8db74a87-22b5-4371-b9fd-12bb983aff5a/hero.jpg"
-                alt="Eurovision Stage 2019"
+                src='https://eurovision.tv/image/8db74a87-22b5-4371-b9fd-12bb983aff5a/hero.jpg'
+                alt='Eurovision Stage 2019'
               />
             </div>
             <p>

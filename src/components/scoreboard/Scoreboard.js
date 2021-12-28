@@ -1,31 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getParticipantsByEvent } from '../../actions/scoreboard'
-import { getCompetition } from '../../actions/competitions'
-import ScoreboardItem from './ScoreboardItem'
-import Spinner from '../layout/Spinner'
-import './Scoreboard.css'
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getParticipantsByEvent } from '../../actions/scoreboard';
+import { getCompetition } from '../../actions/competitions';
+import ScoreboardItem from './ScoreboardItem';
+import Spinner from '../layout/Spinner';
+import './Scoreboard.css';
 
 const Scoreboard = ({ match }) => {
-  const dispatch = useDispatch()
-  const scoreboardList = useSelector((state) => state.scoreboard)
-  const competitionList = useSelector((state) => state.competitions)
-  const { scoreboard, loading } = scoreboardList
-  const { competition } = competitionList
-  const [sortDown, toggleSortDown] = useState(true)
-  const [viewTable, setViewTable] = useState('Grand Final')
+  const dispatch = useDispatch();
+  const scoreboardList = useSelector((state) => state.scoreboard);
+  const competitionList = useSelector((state) => state.competitions);
+  const { scoreboard, loading } = scoreboardList;
+  const { competition } = competitionList;
+  const [sortDown, toggleSortDown] = useState(true);
+  const [viewTable, setViewTable] = useState('Grand Final');
 
   useEffect(() => {
-    dispatch(getParticipantsByEvent(match.params.id))
-    dispatch(getCompetition(match.params.id))
-  }, [dispatch, match.params.id])
+    dispatch(getParticipantsByEvent(match.params.id));
+    dispatch(getCompetition(match.params.id));
+  }, [dispatch, match.params.id]);
 
   const getResults = () => {
-    let results = []
+    let results = [];
     if (viewTable === 'Grand Final') {
       results = sortDown
         ? scoreboard.final.sort((a, b) => (a.points < b.points ? 1 : -1))
-        : scoreboard.final.sort((a, b) => (a.points > b.points ? 1 : -1))
+        : scoreboard.final.sort((a, b) => (a.points > b.points ? 1 : -1));
     } else if (viewTable === 'First Semifinal') {
       results = sortDown
         ? scoreboard.semifinal1.sort((a, b) =>
@@ -33,7 +33,7 @@ const Scoreboard = ({ match }) => {
           )
         : scoreboard.semifinal1.sort((a, b) =>
             a.semiPoints > b.semiPoints ? 1 : -1
-          )
+          );
     } else {
       results = sortDown
         ? scoreboard.semifinal2.sort((a, b) =>
@@ -41,7 +41,7 @@ const Scoreboard = ({ match }) => {
           )
         : scoreboard.semifinal2.sort((a, b) =>
             a.semiPoints > b.semiPoints ? 1 : -1
-          )
+          );
     }
 
     return results.map((participant) => (
@@ -50,14 +50,14 @@ const Scoreboard = ({ match }) => {
         participant={participant}
         viewTable={viewTable}
       />
-    ))
-  }
+    ));
+  };
 
   return loading ? (
     <Spinner />
   ) : (
     <div className='scoreboard background'>
-      <div className='banner'></div>
+      {/* <div className='banner'></div> */}
       <div className='content'>
         <div className='overlay'>
           <div className='container'>
@@ -122,7 +122,7 @@ const Scoreboard = ({ match }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Scoreboard
+export default Scoreboard;

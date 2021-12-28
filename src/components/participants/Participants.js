@@ -1,29 +1,29 @@
-import React, { Fragment, useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getParticipants } from '../../actions/participants'
-import Spinner from '../layout/Spinner'
-import ParticipantCard from './ParticipantCard'
-import './Participants.css'
+import React, { Fragment, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getParticipants } from '../../actions/participants';
+import Spinner from '../layout/Spinner';
+import ParticipantCard from './ParticipantCard';
+import './Participants.css';
 
 const Participants = () => {
-  const dispatch = useDispatch()
-  const participantList = useSelector((state) => state.participants)
-  const { participants, loading } = participantList
+  const dispatch = useDispatch();
+  const participantList = useSelector((state) => state.participants);
+  const { participants, loading } = participantList;
 
-  const [show, setShow] = useState(1)
-  const activeClass = 'btn btn-light active'
-  const classes = 'btn btn-light'
+  const [show, setShow] = useState(1);
+  const activeClass = 'btn btn-light active';
+  const classes = 'btn btn-light';
 
   useEffect(() => {
-    dispatch(getParticipants())
-  }, [dispatch])
+    dispatch(getParticipants());
+  }, [dispatch]);
 
   return loading ? (
     <Spinner />
   ) : (
     <Fragment>
       <div className='participants background'>
-        <div className='banner'></div>
+        {/* <div className='banner'></div> */}
         <div className='content'>
           <div className='overlay'>
             <div className='container'>
@@ -69,9 +69,9 @@ const Participants = () => {
                           key={participant._id}
                           participant={participant}
                         />
-                      )
+                      );
                     } else {
-                      return null
+                      return null;
                     }
                   })}
                 {show === 3 &&
@@ -82,9 +82,9 @@ const Participants = () => {
                           key={participant._id}
                           participant={participant}
                         />
-                      )
+                      );
                     } else {
-                      return null
+                      return null;
                     }
                   })}
                 {show === 4 &&
@@ -95,9 +95,9 @@ const Participants = () => {
                           key={participant._id}
                           participant={participant}
                         />
-                      )
+                      );
                     } else {
-                      return null
+                      return null;
                     }
                   })}
               </div>
@@ -106,7 +106,7 @@ const Participants = () => {
         </div>
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Participants
+export default Participants;

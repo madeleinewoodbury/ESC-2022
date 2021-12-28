@@ -1,25 +1,25 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getHistory } from '../../actions/history'
-import { getIcon } from '../../icons'
-import { Link } from 'react-router-dom'
-import Spinner from '../layout/Spinner'
-import './Postcard.css'
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getHistory } from '../../actions/history';
+import { getIcon } from '../../icons';
+import { Link } from 'react-router-dom';
+import Spinner from '../layout/Spinner';
+import './Postcard.css';
 
 const HistoryPostcard = ({ match, history }) => {
-  const dispatch = useDispatch()
-  const historyParticipant = useSelector((state) => state.history)
-  const { participant, loading } = historyParticipant
+  const dispatch = useDispatch();
+  const historyParticipant = useSelector((state) => state.history);
+  const { participant, loading } = historyParticipant;
 
   useEffect(() => {
-    dispatch(getHistory(match.params.id, history))
-  }, [dispatch, match.params.id, history])
+    dispatch(getHistory(match.params.id, history));
+  }, [dispatch, match.params.id, history]);
 
   return loading || participant === null ? (
     <Spinner />
   ) : (
     <div className='postcard-container'>
-      <div className='banner'></div>
+      {/* <div className='banner'></div> */}
       <div className='postcard'>
         <div className='postcard-top'>
           <div className='postcard-hero'>
@@ -108,7 +108,7 @@ const HistoryPostcard = ({ match, history }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HistoryPostcard
+export default HistoryPostcard;

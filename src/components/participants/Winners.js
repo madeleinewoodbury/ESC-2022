@@ -1,23 +1,23 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getWinners } from '../../actions/history'
-import Spinner from '../layout/Spinner'
-import ParticipantCard from './ParticipantCard'
-import './Participants.css'
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getWinners } from '../../actions/history';
+import Spinner from '../layout/Spinner';
+import ParticipantCard from './ParticipantCard';
+import './Participants.css';
 
 const Winners = () => {
-  const dispatch = useDispatch()
-  const historyParticipants = useSelector((state) => state.history)
-  const { participants, loading } = historyParticipants
+  const dispatch = useDispatch();
+  const historyParticipants = useSelector((state) => state.history);
+  const { participants, loading } = historyParticipants;
 
   useEffect(() => {
-    dispatch(getWinners())
-  }, [dispatch])
+    dispatch(getWinners());
+  }, [dispatch]);
   return loading ? (
     <Spinner />
   ) : (
     <div className='participants background'>
-      <div className='banner'></div>
+      {/* <div className='banner'></div> */}
       <div className='content'>
         <div className='overlay'>
           <div className='container'>
@@ -34,7 +34,7 @@ const Winners = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Winners
+export default Winners;

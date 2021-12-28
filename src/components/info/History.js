@@ -3,14 +3,14 @@ import './Info.css';
 
 const History = () => {
   return (
-    <div className="info-container">
-      <div className="banner"></div>
-      <div className="info">
-        <div className="container-inner">
+    <div className='info-container'>
+      {/* <div className="banner"></div> */}
+      <div className='info'>
+        <div className='container-inner'>
           <header>
-            <h1 className="large">History</h1>
+            <h1 className='large'>History</h1>
 
-            <p className="lead">
+            <p className='lead'>
               The history of the Eurovision Song Contest began as the brainchild
               of Marcel Bezençon of the EBU. The Contest was based on Italy's
               Sanremo Music Festival and was designed to test the limits of live
@@ -24,10 +24,10 @@ const History = () => {
               and simple sing-along songs on every radio station, the Contest
               grew into a true pan-European tradition.
             </p>
-            <div className="img-container">
+            <div className='img-container'>
               <img
-                src="https://eurovision.tv/image/8d917d7a-a1f3-44e5-bac6-de164516e021.jpg"
-                alt="Marcel Bezençon"
+                src='https://eurovision.tv/image/8d917d7a-a1f3-44e5-bac6-de164516e021.jpg'
+                alt='Marcel Bezençon'
               />
               <small>
                 Marcel Bezençon, the founder of the Eurovision Song Contest. ©
@@ -51,10 +51,10 @@ const History = () => {
               would be soon reversed in 1977, to return with apparent permanent
               status in the 1999 contest.
             </p>
-            <div className="img-container">
+            <div className='img-container'>
               <img
-                src="https://eurovision.tv/image/8d917d7d-87bb-45a9-a981-e23199101094.jpg"
-                alt="ABBA 1974"
+                src='https://eurovision.tv/image/8d917d7d-87bb-45a9-a981-e23199101094.jpg'
+                alt='ABBA 1974'
               />
               <small>
                 ABBA, after their famous victory at the 1974 Eurovision Song
@@ -76,12 +76,12 @@ const History = () => {
               favourite songs. The experiment was a success and from 1998 all
               countries were encouraged to use televoting wherever possible.
             </p>
-            <div className="info-video">
+            <div className='info-video'>
               <iframe
-                title="10 memorable voting moments at Eurovision Song Contest"
-                src="https://www.youtube.com/embed/1R_sK34AXXw"
-                frameBorder="0"
-                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                title='10 memorable voting moments at Eurovision Song Contest'
+                src='https://www.youtube.com/embed/1R_sK34AXXw'
+                frameBorder='0'
+                allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
                 allowFullScreen
               ></iframe>
             </div>
@@ -116,12 +116,12 @@ const History = () => {
               the organisers admitted Australia to participate for the first
               time ever.
             </p>
-            <div className="info-video">
+            <div className='info-video'>
               <iframe
-                title="Eurovision Medley"
-                src="https://www.youtube.com/embed/paBzCY9X26A"
-                frameBorder="0"
-                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                title='Eurovision Medley'
+                src='https://www.youtube.com/embed/paBzCY9X26A'
+                frameBorder='0'
+                allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
                 allowFullScreen
               ></iframe>
             </div>

@@ -1,18 +1,18 @@
-import React, { Fragment, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getCountries } from '../../actions/countries'
-import Spinner from '../layout/Spinner'
-import CountryCard from './CountryCard'
-import './Countries.css'
+import React, { Fragment, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCountries } from '../../actions/countries';
+import Spinner from '../layout/Spinner';
+import CountryCard from './CountryCard';
+import './Countries.css';
 
 const Countries = () => {
-  const dispatch = useDispatch()
-  const countriesList = useSelector((state) => state.countries)
-  const { countries, loading } = countriesList
+  const dispatch = useDispatch();
+  const countriesList = useSelector((state) => state.countries);
+  const { countries, loading } = countriesList;
 
   useEffect(() => {
-    dispatch(getCountries())
-  }, [dispatch])
+    dispatch(getCountries());
+  }, [dispatch]);
 
   return (
     <Fragment>
@@ -20,7 +20,7 @@ const Countries = () => {
         <Spinner />
       ) : (
         <div className='countries background'>
-          <div className='banner'></div>
+          {/* <div className='banner'></div> */}
           <div className='content'>
             <div className='overlay'>
               <div className='container'>
@@ -42,7 +42,7 @@ const Countries = () => {
         </div>
       )}
     </Fragment>
-  )
-}
+  );
+};
 
-export default Countries
+export default Countries;

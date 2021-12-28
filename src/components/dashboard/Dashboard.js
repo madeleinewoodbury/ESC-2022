@@ -1,24 +1,24 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
-import { Link, Redirect } from 'react-router-dom'
-import Spinner from '../layout/Spinner'
-import DashboardItem from './DashboardItem'
-import './Dashboard.css'
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
+import Spinner from '../layout/Spinner';
+import DashboardItem from './DashboardItem';
+import './Dashboard.css';
 
 const Dashboard = () => {
-  const auth = useSelector((state) => state.auth)
-  const { isAuthenticated, loading, user } = auth
-  const [sortDown, toggleSortDown] = useState(true)
+  const auth = useSelector((state) => state.auth);
+  const { isAuthenticated, loading, user } = auth;
+  const [sortDown, toggleSortDown] = useState(true);
 
   if (!isAuthenticated) {
-    return <Redirect to='/' />
+    return <Redirect to='/' />;
   }
 
   const getUserVotes = () => {
     if (sortDown) {
-      user.votes.sort((a, b) => (a.vote < b.vote ? 1 : -1))
+      user.votes.sort((a, b) => (a.vote < b.vote ? 1 : -1));
     } else {
-      user.votes.sort((a, b) => (a.vote > b.vote ? 1 : -1))
+      user.votes.sort((a, b) => (a.vote > b.vote ? 1 : -1));
     }
 
     let userVotes = user.votes.map((vote) => (
@@ -27,15 +27,15 @@ const Dashboard = () => {
         participant={vote.participant}
         vote={vote.vote}
       />
-    ))
-    return userVotes
-  }
+    ));
+    return userVotes;
+  };
 
   return loading && user === null ? (
     <Spinner />
   ) : (
     <div className='dashboard background'>
-      <div className='banner'></div>
+      {/* <div className='banner'></div> */}
       <div className='content'>
         <div className='overlay'>
           <div className='container'>
@@ -82,7 +82,7 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;
