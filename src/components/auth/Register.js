@@ -36,7 +36,6 @@ const Register = () => {
   return (
     <Fragment>
       <div className='auth background'>
-        {/* <div className='banner'></div> */}
         <div className='content content-bg'>
           <div className='overlay'>
             <div className='auth-container'>

@@ -6,19 +6,7 @@
   height: 100vh;
 }
 
-/* .info-container .banner {
-  background: url('../../img/banner.svg') no-repeat center center/cover;
-  width: 25%;
-  position: fixed;
-  top: 10vh;
-  left: 0;
-  bottom: 0;
-  z-index: 10;
-} */
-
 .info {
-  /* width: 75%;
-  margin-left: 25%; */
   width: 100%;
 }
 
@@ -63,10 +51,6 @@
 }
 
 @media screen and (max-width: 1024px) {
-  /* .info-container .banner {
-    display: none;
-  } */
-
   .info {
     width: 100%;
     margin-left: 0;

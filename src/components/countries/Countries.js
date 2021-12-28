@@ -20,7 +20,6 @@ const Countries = () => {
         <Spinner />
       ) : (
         <div className='countries background'>
-          {/* <div className='banner'></div> */}
           <div className='content'>
             <div className='overlay'>
               <div className='container'>

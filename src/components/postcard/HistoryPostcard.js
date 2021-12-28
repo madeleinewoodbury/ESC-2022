@@ -19,7 +19,6 @@ const HistoryPostcard = ({ match, history }) => {
     <Spinner />
   ) : (
     <div className='postcard-container'>
-      {/* <div className='banner'></div> */}
       <div className='postcard'>
         <div className='postcard-top'>
           <div className='postcard-hero'>

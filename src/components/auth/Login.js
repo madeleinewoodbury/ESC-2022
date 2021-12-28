@@ -29,7 +29,6 @@ const Login = () => {
   return (
     <Fragment>
       <div className='auth background'>
-        {/* <div className='banner'></div> */}
         <div className='content'>
           <div className='overlay'>
             <div className='auth-container'>

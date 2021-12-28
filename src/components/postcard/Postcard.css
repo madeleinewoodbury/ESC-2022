@@ -7,23 +7,11 @@
   height: 100vh;
 }
 
-/* .postcard-container .banner {
-  background: url('../../img/banner.svg') no-repeat center center/cover;
-  width: 25%;
-  position: fixed;
-  top: 10vh;
-  left: 0;
-  bottom: 0;
-  z-index: 10;
-} */
-
 .postcard {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  /* width: 75%;
-  margin-left: 25%; */
 }
 
 .postcard .postcard-top {
@@ -248,15 +236,6 @@
 }
 
 @media screen and (max-width: 1024px) {
-  /* .postcard-container .banner {
-    display: none;
-  }
-
-  .postcard {
-    width: 100%;
-    margin-left: 0;
-  } */
-
   .postcard .postcard-top .postcard-hero .postcard-title .postcard-logo {
     bottom: 50px;
     left: 30px;

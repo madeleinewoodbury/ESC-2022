@@ -17,7 +17,6 @@ const Winners = () => {
     <Spinner />
   ) : (
     <div className='participants background'>
-      {/* <div className='banner'></div> */}
       <div className='content'>
         <div className='overlay'>
           <div className='container'>

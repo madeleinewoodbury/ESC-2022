@@ -57,7 +57,6 @@ const Scoreboard = ({ match }) => {
     <Spinner />
   ) : (
     <div className='scoreboard background'>
-      {/* <div className='banner'></div> */}
       <div className='content'>
         <div className='overlay'>
           <div className='container'>

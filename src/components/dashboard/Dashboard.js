@@ -35,7 +35,6 @@ const Dashboard = () => {
     <Spinner />
   ) : (
     <div className='dashboard background'>
-      {/* <div className='banner'></div> */}
       <div className='content'>
         <div className='overlay'>
           <div className='container'>

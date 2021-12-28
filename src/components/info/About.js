@@ -4,7 +4,6 @@ import './Info.css';
 const About = () => {
   return (
     <div className='info-container'>
-      {/* <div className="banner"></div> */}
       <div className='info'>
         <div className='container-inner'>
           <header>
