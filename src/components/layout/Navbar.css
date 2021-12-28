@@ -1,0 +1,127 @@
+.navbar-behind {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 10vh;
+  background-color: black;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 10vh;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  padding: 10px 20px;
+}
+
+.navbar .logo img {
+  width: 75px;
+  margin: 0.5rem;
+  padding-top: 0.2rem;
+  position: absolute;
+}
+
+.navbar .menu-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: #fff;
+  display: none;
+  z-index: 100;
+}
+
+.navbar .menu-checkbox {
+  display: none;
+}
+
+.navbar .links-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 100px;
+}
+
+.navbar .nav-links {
+  display: flex;
+}
+
+.navbar .nav-links:last-of-type {
+  margin-right: 1rem;
+}
+
+.navbar .nav-links li a {
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.navbar .nav-links li a i {
+  margin-right: 0.4rem;
+}
+
+.navbar .nav-links li a:hover {
+  border-bottom-color: var(--secondary-color);
+}
+
+.navbar .nav-links li a.active {
+  color: var(--secondary-color);
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar .nav-links li a {
+    font-size: 1.1rem;
+    margin: 0 0.75rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar .menu-toggle {
+    display: initial;
+    cursor: pointer;
+  }
+
+  .navbar .menu-toggle:hover {
+    color: var(--secondary-color);
+  }
+
+  .navbar .logo img {
+    padding-top: 0;
+  }
+
+  .navbar .links-container {
+    flex-direction: column;
+    display: none;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .navbar .nav-links {
+    flex-direction: column;
+    text-align: right;
+    margin: 4rem 0 0 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 0.5rem 0;
+  }
+
+  .navbar .nav-links:last-of-type {
+    margin: 0;
+  }
+
+  .navbar .nav-links li {
+    padding: 0.5rem 1rem;
+  }
+
+  #toggle:checked + .links-container {
+    display: block;
+  }
+}

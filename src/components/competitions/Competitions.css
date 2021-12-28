@@ -1,0 +1,157 @@
+.competitions .banner {
+  width: 25%;
+  position: fixed;
+}
+
+.competitions .content {
+  column-gap: 0px;
+  width: 75%;
+  margin-left: 25%;
+}
+
+.competitions .content .container {
+  width: 100%;
+  margin: 0;
+}
+
+.competitions .content .container .btn-container {
+  margin: 1.5rem 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.competitions .card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.competitions .card {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.competitions .alt-icon {
+  width: 16px;
+}
+
+.competitions .card .card-img img {
+  width: 100%;
+}
+
+.competitions .card .card-img .img-link {
+  transition: all ease-in 0.4s;
+}
+
+.competitions .card .card-img .img-link:hover {
+  opacity: 0.9;
+}
+
+.competitions .card .card-content {
+  position: relative;
+  padding: 2rem;
+}
+
+.competitions .card .card-content .card-pill {
+  position: absolute;
+  top: -15px;
+  background-color: #fff;
+  padding: 5px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.competitions .card .card-content .card-pill a {
+  color: black;
+}
+
+.competitions .card .card-content .card-pill:hover,
+.competitions .card .card-content .card-pill:hover a {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+
+.competitions .card .card-content .card-pill .small-icon {
+  width: 16px;
+}
+
+.competitions .card .card-content .card-pill img {
+  margin-right: 0.25rem;
+}
+
+.competitions .card .card-content .card-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.competitions .card .card-content .card-info a {
+  font-size: 1.5em;
+  color: #fff;
+  margin: 0.25rem 0;
+}
+
+.competitions .card .card-content .card-info a:hover {
+  color: var(--primary-color);
+}
+
+.competitions .card .card-content .card-info span {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+}
+
+@media screen and (max-width: 1200px) {
+  .competitions .card {
+    width: 33.3%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .competitions .content {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .competitions .content .container .btn-container {
+    flex-direction: column;
+  }
+
+  .competitions .content .container .btn-container .btn {
+    width: 100%;
+    display: block;
+    opacity: 0.8;
+    padding: 0.4rem 0;
+    border-radius: 0;
+  }
+
+  .competitions .card {
+    width: 50%;
+  }
+
+  .participants .card {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .participants .card {
+    width: 100%;
+  }
+
+  .competitions .card .card-content .card-pill {
+    left: 10px;
+  }
+
+  .competitions .card .card-content .card-pill a {
+    font-size: 0.8rem;
+  }
+
+  .competitions .card .card-content .card-info a {
+    font-size: 1.2rem;
+  }
+}

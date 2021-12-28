@@ -1,0 +1,159 @@
+.scoreboard .container h1 {
+  color: #fff;
+  margin: 2rem;
+}
+
+.scoreboard .scoreboard-btns {
+  margin-left: 2rem;
+  display: flex;
+}
+
+.scoreboard .scoreboard-btns .btn:hover {
+  background-color: var(--secondary-color);
+  color: var(--dark-color);
+}
+
+.scoreboard .scoreboard-btns .btn.active {
+  background-color: var(--dark-color);
+  color: var(--secondary-color);
+}
+
+.scoreboard .container .list {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0 3rem 0;
+}
+
+.scoreboard .container .list .list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 2rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  padding: 0.25rem;
+}
+
+.scoreboard .container .list .list-item:first-of-type {
+  border-bottom: 4px solid var(--secondary-color);
+  padding: 0 0.25rem;
+  align-items: baseline;
+}
+
+.scoreboard .container .list .list-item .item-title {
+  display: flex;
+}
+
+.scoreboard .container .list .list-item .item-title h2 {
+  color: #fff;
+  font-size: 2rem;
+  padding-bottom: 0;
+}
+
+.scoreboard .container .list .list-item:first-of-type .item-vote {
+  margin-right: 1.5rem;
+}
+
+.scoreboard .container .list .list-item:first-of-type .item-vote i {
+  margin-left: 0.2rem;
+}
+
+.scoreboard .container .list .list-item .item-info {
+  display: flex;
+  align-items: center;
+  width: 75%;
+}
+
+.scoreboard .container .list .list-item .item-info .place {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
+}
+
+.scoreboard .container .list .list-item .item-info h2 {
+  color: #fff;
+  margin-left: 1rem;
+}
+
+.scoreboard .container .list .list-item .item-info h2:hover {
+  color: var(--primary-color);
+}
+
+.scoreboard .container .list .list-item .item-info h2 span {
+  color: var(--secondary-color);
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+
+.scoreboard .container .list .list-item .item-info h4 span {
+  color: var(--secondary-color);
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+
+.scoreboard .container .list .list-item .item-vote {
+  margin-right: 3rem;
+  color: #fff;
+  font-size: 1.3rem;
+}
+.scoreboard .container .list .list-item .item-vote h4 span {
+  margin-left: 0.2rem;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .scoreboard .container .list .list-item .item-title:first-of-type h2 {
+    margin-left: 2rem;
+  }
+
+  .scoreboard .container .list {
+    width: 100%;
+  }
+
+  .scoreboard .container .list .list-item {
+    width: 100%;
+    margin: 0;
+    padding: 0.25rem 2rem;
+  }
+
+  .scoreboard .container .list .list-item .item-vote {
+    margin-right: 0;
+    font-size: 1.1rem;
+  }
+
+  .scoreboard .container .list .list-item .item-vote h4 span {
+    margin-left: 0.2rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .scoreboard .container h1 {
+    font-size: 2rem;
+  }
+
+  .scoreboard .container .list .list-item .item-title:first-of-type h2 {
+    font-size: 1.5rem;
+  }
+
+  .scoreboard .container .list .list-item .item-info h4 {
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  .scoreboard .container .list .list-item .item-vote,
+  .scoreboard .container .list .list-item .item-vote h4 span {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .scoreboard .container .list .list-item img {
+    width: 16px;
+  }
+
+  .scoreboard .container .list .list-item .item-info h2 {
+    font-size: 1.2rem;
+  }
+}

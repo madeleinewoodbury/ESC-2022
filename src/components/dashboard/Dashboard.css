@@ -1,0 +1,145 @@
+.dashboard .container h1 {
+  color: #fff;
+  margin: 2rem;
+}
+
+.dashboard .container .no-votes {
+  color: #fff;
+  margin-left: 2rem;
+}
+
+.dashboard .container .btn-container {
+  margin: 2rem;
+}
+
+.dashboard .container .list {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0 3rem 0;
+}
+
+.dashboard .container .list .list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 2rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  padding: 0.25rem;
+}
+
+.dashboard .container .list .list-item:first-of-type {
+  border-bottom: 4px solid var(--secondary-color);
+  padding: 0 0.25rem;
+  align-items: baseline;
+}
+
+.dashboard .container .list .list-item .item-title {
+  display: flex;
+}
+
+.dashboard .container .list .list-item .item-title h2 {
+  color: #fff;
+  font-size: 2rem;
+  padding-bottom: 0;
+}
+
+.dashboard .container .list .list-item:first-of-type .item-vote {
+  margin-right: 1.5rem;
+}
+
+.dashboard .container .list .list-item:first-of-type .item-vote i {
+  margin-left: 0.2rem;
+}
+
+.dashboard .container .list .list-item .item-info {
+  display: flex;
+  align-items: center;
+  width: 75%;
+}
+
+.dashboard .container .list .list-item .item-info h2 {
+  color: #fff;
+}
+
+.dashboard .container .list .list-item .item-info h2:hover {
+  color: var(--primary-color);
+}
+
+.dashboard .container .list .list-item .item-info h2 span {
+  color: var(--secondary-color);
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+
+.dashboard .container .list .list-item .item-info img {
+  width: 50px;
+  margin-right: 1rem;
+}
+
+.dashboard .container .list .list-item .item-vote {
+  margin-right: 3rem;
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.dashboard .container .list .list-item .item-vote h4 span {
+  margin-left: 0.2rem;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .dashboard .container .list {
+    width: 100%;
+  }
+
+  .dashboard .container .list .list-item .item-title:first-of-type h2 {
+    margin-left: 2rem;
+  }
+
+  .dashboard .container .list .list-item {
+    width: 100%;
+    margin: 0;
+    padding: 0.25rem 2rem;
+  }
+
+  .dashboard .container .list .list-item .item-vote {
+    margin-right: 0;
+    font-size: 1.1rem;
+  }
+
+  .dashboard .container .list .list-item .item-vote h4 span {
+    margin-left: 0.2rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .dashboard .container h1 {
+    font-size: 2rem;
+  }
+  .dashboard .container .btn-container {
+    margin: 2rem;
+    flex-direction: column;
+  }
+
+  .dashboard .container .btn-container .btn:first-of-type {
+    margin-bottom: 0.5rem;
+  }
+
+  .dashboard .container .list .list-item .item-title:first-of-type h2 {
+    font-size: 1.5rem;
+  }
+
+  .dashboard .container .list .list-item .item-info h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .dashboard .container .list .list-item .item-vote,
+  .dashboard .container .list .list-item .item-vote h4 span {
+    font-size: 0.9rem;
+  }
+}

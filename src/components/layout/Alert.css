@@ -1,0 +1,44 @@
+.alert {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 200;
+  width: 20%;
+  display: flex;
+  padding: 0.8rem;
+  opacity: 0.9;
+  background: var(--light-color);
+  color: #333;
+}
+
+.alert-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.alert-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+.alert-danger {
+  background: var(--danger-color);
+  color: #fff;
+}
+
+.alert-success {
+  background: var(--success-color);
+  color: #fff;
+}
+
+.alert-white {
+  background: #fff;
+  color: #333;
+  border: #ccc solid 1px;
+}
+
+@media screen and (max-width: 500px) {
+  .alert {
+    width: 80%;
+  }
+}

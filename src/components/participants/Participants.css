@@ -1,0 +1,151 @@
+.participants .banner {
+  width: 25%;
+  position: fixed;
+}
+
+.participants .content {
+  column-gap: 0px;
+  width: 75%;
+  margin-left: 25%;
+}
+
+.participants .content .container {
+  width: 100%;
+  margin: 0;
+}
+
+.participants .content .container .btn-container {
+  margin: 1.5rem 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.participants .card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.participants .card {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.participants .card .card-img .img-link {
+  transition: all ease-in 0.4s;
+}
+
+.participants .card .card-img .img-link:hover {
+  filter: brightness(1.2);
+}
+
+.participants .card .card-img img {
+  width: 100%;
+}
+
+.participants .card .card-content {
+  position: relative;
+  padding: 2rem;
+}
+
+.participants .card .card-content .card-pill {
+  position: absolute;
+  top: -15px;
+  background-color: #fff;
+  padding: 5px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.participants .card .card-content .card-pill a {
+  text-align: center;
+  color: black;
+}
+
+.participants .card .card-content .card-pill:hover,
+.participants .card .card-content .card-pill:hover a {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+
+.participants .card .card-content .winner-link {
+  padding-bottom: 0.5rem;
+}
+
+.participants .card .card-content .winner-link img {
+  margin-right: 0.5rem;
+  width: 20px;
+}
+
+.participants .card .card-content .small-icon {
+  width: 16px;
+}
+
+.participants .card .card-content .card-pill img {
+  margin-right: 0.25rem;
+}
+
+.participants .card .card-content .card-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.participants .card .card-content .card-info a {
+  font-size: 1.5em;
+  color: #fff;
+  margin: 0.25rem 0;
+}
+
+.participants .card .card-content .card-info a:hover {
+  color: var(--primary-color);
+}
+
+.participants .card .card-content .card-info span {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+}
+
+.participants .card .card-content .winner-link a {
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .participants .card {
+    width: 33.3%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .participants .content {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .participants .content .container .btn-container {
+    flex-direction: column;
+  }
+
+  .participants .content .container .btn-container .btn {
+    width: 100%;
+    display: block;
+    opacity: 0.8;
+    padding: 0.4rem 0;
+    border-radius: 0;
+  }
+
+  .participants .card {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .participants .card {
+    width: 100%;
+  }
+}

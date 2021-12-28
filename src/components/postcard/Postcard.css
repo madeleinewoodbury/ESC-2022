@@ -1,0 +1,326 @@
+/* Postcard */
+.postcard-container {
+  position: relative;
+  top: 10vh;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.postcard-container .banner {
+  background: url('../../img/banner.svg') no-repeat center center/cover;
+  width: 25%;
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.postcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+  margin-left: 25%;
+}
+
+.postcard .postcard-top {
+  display: flex;
+  width: 100%;
+}
+
+.postcard .postcard-top .postcard-hero {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.postcard .postcard-top .postcard-hero .postcard-img {
+  width: 100%;
+  height: auto;
+}
+
+.postcard .postcard-top .postcard-hero .postcard-title {
+  position: relative;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 1rem 0;
+  margin-top: -5px;
+  background-color: var(--dark-color);
+  width: 100%;
+  height: 100px;
+}
+
+.postcard .postcard-top .postcard-hero .postcard-title .postcard-flag {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  z-index: 10;
+  width: 200px;
+}
+
+.postcard .postcard-top .postcard-hero .postcard-title .postcard-logo {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  z-index: 10;
+  width: 150px;
+  opacity: 0.8;
+}
+
+.postcard .postcard-top .postcard-hero .postcard-title h2 {
+  font-size: 2rem;
+  margin-left: 200px;
+  color: #fff;
+}
+
+.postcard .postcard-top .postcard-hero .postcard-title .competition-host {
+  text-align: center;
+  width: 100%;
+  margin-left: 0;
+}
+
+.postcard .postcard-top .postcard-info {
+  width: 30%;
+  background-color: #ededf0;
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+  position: relative;
+}
+
+.postcard .postcard-top .postcard-info .postcard-list span {
+  display: block;
+}
+
+.postcard .postcard-top .postcard-info .postcard-list .event-year {
+  margin-bottom: 0.2rem;
+}
+
+.postcard .postcard-top .postcard-info .results {
+  position: absolute;
+  bottom: 0;
+  margin: 1rem 0;
+}
+
+.postcard .postcard-top .postcard-info div {
+  margin-bottom: 1rem;
+}
+
+.postcard .postcard-top .postcard-info div h3 {
+  margin: 0;
+  padding-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.postcard .postcard-top .postcard-info div span {
+  font-size: 0.9rem;
+}
+
+.postcard-info .country-info {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.postcard-info .small-icon {
+  width: 16px;
+}
+
+.postcard-info .country-info a {
+  color: black;
+}
+
+.postcard-info .country-info a:hover {
+  color: var(--primary-color);
+}
+
+.postcard-info .country-info img {
+  margin-right: 0.25rem;
+}
+
+.postcard .postcard-top .postcard-info .user-votes h3 {
+  padding-bottom: 0;
+  margin-bottom: -0.25rem;
+}
+
+.postcard .postcard-top .postcard-info .user-votes .form {
+  padding: 0;
+  margin: 0;
+}
+
+.postcard .postcard-top .postcard-info .user-votes .form select {
+  margin: 0;
+  width: 100%;
+  padding: 0 0.4rem;
+  font-size: 1rem;
+}
+
+.postcard .postcard-content {
+  width: 80%;
+  margin-top: -2px auto 0 auto;
+}
+
+.postcard .postcard-info .winner {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.postcard-info .winner a {
+  color: black;
+}
+
+.postcard-info .winner a:hover {
+  color: var(--primary-color);
+}
+
+.postcard .postcard-info .winner img {
+  margin-right: 0.25rem;
+}
+
+.postcard .postcard-info .winner-info {
+  margin-top: -10px;
+}
+
+.postcard .postcard-info .winner-info strong {
+  margin-right: 0.3rem;
+}
+
+.postcard .postcard-content .postcard-bio {
+  color: black;
+}
+
+.postcard .postcard-content .postcard-bio .intro {
+  font-weight: bold;
+}
+
+.postcard .postcard-content .postcard-bio p:first-of-type {
+  font-weight: bold;
+}
+
+.postcard .postcard-content .postcard-bio p {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  margin: 1rem;
+}
+
+.postcard .postcard-content .postcard-video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 5rem 0;
+  grid-area: video;
+  width: 100%;
+}
+
+.postcard .postcard-content iframe {
+  width: 700px;
+  height: 400px;
+}
+
+.postcard .postcard-info .winner-info a,
+.postcard .postcard-info .info-link {
+  color: black;
+  font-size: 0.9rem;
+}
+
+.postcard .postcard-info .winner-info a:hover,
+.postcard .postcard-info .info-link:hover {
+  color: var(--primary-color);
+}
+
+@media screen and (max-width: 1200px) {
+  .postcard .postcard-top .postcard-hero .postcard-title .postcard-logo {
+    bottom: 50px;
+    left: 35px;
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .postcard-container .banner {
+    display: none;
+  }
+
+  .postcard {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .postcard .postcard-top .postcard-hero .postcard-title .postcard-logo {
+    bottom: 50px;
+    left: 30px;
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .postcard .postcard-top {
+    flex-direction: column;
+  }
+
+  .postcard .postcard-top .postcard-hero {
+    width: 100%;
+  }
+
+  .postcard .postcard-top .postcard-info {
+    width: 100%;
+  }
+
+  .postcard .postcard-top .postcard-info .results {
+    position: initial;
+  }
+
+  .postcard .postcard-top .postcard-info div h3 {
+    margin: 0;
+  }
+
+  .postcard .postcard-content .postcard-bio p {
+    font-size: 1.1rem;
+  }
+
+  .postcard .postcard-content iframe {
+    width: 600px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .postcard .postcard-top .postcard-hero .postcard-title {
+    height: 80px;
+  }
+
+  .postcard .postcard-top .postcard-hero .postcard-title .postcard-flag {
+    bottom: 25px;
+    left: 20px;
+    width: 120px;
+  }
+
+  .postcard .postcard-top .postcard-hero .postcard-title .postcard-logo {
+    bottom: 403px;
+    left: 15px;
+    width: 75px;
+  }
+
+  .postcard .postcard-top .postcard-hero .postcard-title h2 {
+    margin-left: 120px;
+    font-size: 1.5rem;
+  }
+
+  .postcard .postcard-content iframe {
+    width: 400px;
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .postcard .postcard-content iframe {
+    width: 300px;
+    height: 200px;
+  }
+}
