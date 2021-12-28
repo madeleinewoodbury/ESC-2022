@@ -1,44 +1,44 @@
-import React, { Fragment, useEffect } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import store from './store'
-import { loadUser } from './actions/auth'
-import setAuthToken from './utils/setAuthToken'
+import React, { Fragment, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import store from './store';
+import { loadUser } from './actions/auth';
+import setAuthToken from './utils/setAuthToken';
 
 // Components
-import Alert from './components/layout/Alert'
-import Navbar from './components/layout/Navbar'
-// import Landing from './components/layout/Landing'
-import Dashboard from './components/dashboard/Dashboard'
-import About from './components/info/About'
-import History from './components/info/History'
-import Login from './components/auth/Login'
-import Register from './components/auth/Register'
-import Countries from './components/countries/Countries'
-import Participants from './components/participants/Participants'
-import Competitions from './components/competitions/Competitions'
-import ParticipantPostcard from './components/postcard/ParticipantPostcard'
-import CompetitionPostcard from './components/postcard/CompetitionPostcard'
-import CountryPostcard from './components/postcard/CountryPostcard'
-import Scoreboard from './components/scoreboard/Scoreboard'
-import HistoryPostcard from './components/postcard/HistoryPostcard'
-import Winners from './components/participants/Winners'
-import NotFound from './components/layout/NotFound'
-import './App.css'
+import Alert from './components/layout/Alert';
+import Navbar from './components/layout/Navbar';
+import Landing from './components/layout/Landing';
+import Dashboard from './components/dashboard/Dashboard';
+import About from './components/info/About';
+import History from './components/info/History';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
+import Countries from './components/countries/Countries';
+import Participants from './components/participants/Participants';
+import Competitions from './components/competitions/Competitions';
+import ParticipantPostcard from './components/postcard/ParticipantPostcard';
+import CompetitionPostcard from './components/postcard/CompetitionPostcard';
+import CountryPostcard from './components/postcard/CountryPostcard';
+import Scoreboard from './components/scoreboard/Scoreboard';
+import HistoryPostcard from './components/postcard/HistoryPostcard';
+import Winners from './components/participants/Winners';
+import NotFound from './components/layout/NotFound';
+import './App.css';
 
 if (localStorage.token) {
-  setAuthToken(localStorage.token)
+  setAuthToken(localStorage.token);
 }
 
 const App = () => {
   useEffect(() => {
-    store.dispatch(loadUser())
-  }, [])
+    store.dispatch(loadUser());
+  }, []);
 
   return (
     <Router>
       <Fragment>
         <Navbar />
-        <Route exact path='/' component={Participants} />
+        <Route exact path='/' component={Landing} />
         <Alert />
         <Switch>
           <Route exact path='/dashboard' component={Dashboard} />
@@ -67,7 +67,7 @@ const App = () => {
         </Switch>
       </Fragment>
     </Router>
-  )
-}
+  );
+};
 
-export default App
+export default App;

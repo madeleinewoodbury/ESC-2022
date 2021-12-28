@@ -1,5 +1,5 @@
-import React from 'react'
-import Countdown from '../utils/Countdown'
+import React from 'react';
+import Countdown from '../utils/Countdown';
 
 const Landing = () => {
   return (
@@ -9,13 +9,13 @@ const Landing = () => {
         <div className='overlay'>
           <div className='container'>
             <Countdown
-              timeTillDate={new Date('May 22, 2021 21:00:00').getTime()}
+              timeTillDate={new Date('May 14, 2022 21:00:00').getTime()}
             />
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Landing
+export default Landing;
