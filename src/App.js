@@ -24,6 +24,7 @@ import HistoryPostcard from './components/postcard/HistoryPostcard';
 import Winners from './components/participants/Winners';
 import NotFound from './components/layout/NotFound';
 import AddParticipant from './components/admin/AddParticipant';
+import EditParticipant from './components/admin/EditParticipant';
 import './App.css';
 
 if (localStorage.token) {
@@ -65,6 +66,11 @@ const App = () => {
           <Route exact path='/history/:id' component={HistoryPostcard} />
           <Route exact path='/scoreboard/:id' component={Scoreboard} />
           <Route exact path='/add-participant' component={AddParticipant} />
+          <Route
+            exact
+            path='/edit-participant/:id'
+            component={EditParticipant}
+          />
           <Route component={NotFound} />
         </Switch>
       </Fragment>

@@ -123,6 +123,19 @@ const ParticipantPostcard = ({ match, history }) => {
                 </form>
               </div>
             ) : null}
+            {user && user.role === 'admin' ? (
+              <div className='btn-container'>
+                <Link
+                  to={`/edit-participant/${participant._id}`}
+                  className='btn btn-primary'
+                >
+                  <i className='fas fa-edit'></i> Edit
+                </Link>
+                <Link to='/' className='btn btn-danger-reverse'>
+                  <i className='fas fa-trash'></i> Delete
+                </Link>
+              </div>
+            ) : null}
           </div>
         </div>
         <div className='postcard-content'>

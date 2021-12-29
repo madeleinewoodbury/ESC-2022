@@ -43,7 +43,7 @@ const Dashboard = () => {
               <Link to='/participants' className='btn btn-secondary'>
                 View Participants
               </Link>
-              {user.role == 'admin' ? (
+              {user.role === 'admin' ? (
                 <Link to='/add-participant' className='btn btn-light'>
                   Add Participant
                 </Link>

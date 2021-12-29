@@ -1,14 +1,17 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCountries } from '../../actions/countries';
-import { addParticipant } from '../../actions/participants';
+import { getParticipant } from '../../actions/participants';
+import { editParticipant } from '../../actions/participants';
 import { Redirect } from 'react-router-dom';
 
-const AddParticipant = ({ history }) => {
+const EditParticipant = ({ match, history }) => {
   const dispatch = useDispatch();
   const countriesList = useSelector((state) => state.countries);
-  const { countries } = countriesList;
+  const participantDetail = useSelector((state) => state.participants);
   const auth = useSelector((state) => state.auth);
+  const { participant, loading } = participantDetail;
+  const { countries } = countriesList;
   const { isAuthenticated, user } = auth;
   const [formData, setFormData] = useState({
     artist: '',
@@ -19,21 +22,45 @@ const AddParticipant = ({ history }) => {
     lyrics: '',
     music: '',
     bio: '',
-    points: 0,
     image: '',
     video: '',
+    points: 0,
   });
 
+  const updateFormData = () => {
+    setFormData({
+      artist: loading || !participant.artist ? '' : participant.artist,
+      song: loading || !participant.song ? '' : participant.song,
+      country:
+        loading || !participant.country._id ? '' : participant.country._id,
+      semifinal: loading || !participant.semifinal ? '' : participant.semifinal,
+      final: loading || participant.final,
+      lyrics: loading || !participant.lyrics ? '' : participant.lyrics,
+      music: loading || !participant.music ? '' : participant.music,
+      bio: loading || !participant.bio ? '' : participant.bio,
+      image: loading || !participant.image ? '' : participant.image,
+      video: loading || !participant.video ? '' : participant.video,
+    });
+  };
+
   useEffect(() => {
-    dispatch(getCountries());
-  }, [dispatch]);
+    countries.length === 0 && dispatch(getCountries());
+    if (participant === null || participant._id !== match.params.id) {
+      dispatch(getParticipant(match.params.id));
+    }
+
+    if (participant !== null) {
+      updateFormData();
+    }
+    // eslint-disable-next-line
+  }, [loading, participant, match.params.id]);
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(addParticipant(formData, history));
+    dispatch(editParticipant(formData, history, match.params.id));
   };
 
   if (!isAuthenticated || user.role !== 'admin') {
@@ -46,7 +73,7 @@ const AddParticipant = ({ history }) => {
         <div className='content'>
           <div className='overlay'>
             <div className='auth-container'>
-              <h1 className='large'>Add Participant</h1>
+              <h1 className='large'>Edit Participant</h1>
               <p>* = required field</p>
               <form className='form' onSubmit={(e) => handleSubmit(e)}>
                 <div className='form-group'>
@@ -165,7 +192,7 @@ const AddParticipant = ({ history }) => {
                 <input
                   type='submit'
                   className='btn btn-secondary'
-                  value='Add Participant'
+                  value='Update Participant'
                 />
               </form>
             </div>
@@ -176,4 +203,4 @@ const AddParticipant = ({ history }) => {
   );
 };
 
-export default AddParticipant;
+export default EditParticipant;
