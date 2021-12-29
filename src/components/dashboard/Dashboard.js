@@ -39,16 +39,20 @@ const Dashboard = () => {
         <div className='overlay'>
           <div className='container'>
             <h1 className='large'>Welcome {user && user.name.split(' ')[0]}</h1>
-
-            {user && user.votes.length === 0 ? (
-              <div className='no-votes'>
-                <p className='lead'>
-                  You have not voted on any participants yet...
-                </p>
-                <Link to='/participants' className='btn btn-primary'>
-                  View Participants
+            <div className='btn-container'>
+              <Link to='/participants' className='btn btn-secondary'>
+                View Participants
+              </Link>
+              {user.role == 'admin' ? (
+                <Link to='/add-participant' className='btn btn-light'>
+                  Add Participant
                 </Link>
-              </div>
+              ) : null}
+            </div>
+            {user && user.votes.length === 0 ? (
+              <p className='lead'>
+                You have not voted on any participants yet...
+              </p>
             ) : (
               <div className='list'>
                 <div className='list-item'>

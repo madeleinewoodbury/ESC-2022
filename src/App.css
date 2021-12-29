@@ -57,6 +57,11 @@ li {
   overflow: auto;
 }
 
+.auth .container {
+  width: 80%;
+  color: #fff;
+}
+
 .container-inner {
   margin: 2rem;
 }
@@ -223,6 +228,10 @@ li {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
+.form textarea {
+  height: 300px;
+}
+
 .form input[type='submit'],
 button {
   font: inherit;
@@ -236,7 +245,9 @@ button {
 .auth .auth-container {
   color: var(--light-color);
   width: 60%;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  padding-bottom: 3rem;
+  overflow: auto;
 }
 
 .notfound .container {
