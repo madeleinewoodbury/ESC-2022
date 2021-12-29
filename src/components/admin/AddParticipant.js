@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCountries } from '../../actions/countries';
-// import { login } from '../../actions/auth';
+import { addParticipant } from '../../actions/participants';
 import { Link, Redirect } from 'react-router-dom';
 
 const AddParticipant = () => {
@@ -33,12 +33,8 @@ const AddParticipant = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // dispatch(login(formData));
-
-    console.log(formData);
+    dispatch(addParticipant(formData));
   };
-
-  const { email, password } = formData;
 
   if (!isAuthenticated || user.role != 'admin') {
     return <Redirect to='/dashboard' />;
@@ -80,7 +76,9 @@ const AddParticipant = () => {
                     >
                       <option value='0'>* Select a country</option>
                       {countries.map((country) => (
-                        <option key={country._id}>{country.name}</option>
+                        <option key={country._id} value={country._id}>
+                          {country.name}
+                        </option>
                       ))}
                     </select>
                   </div>
