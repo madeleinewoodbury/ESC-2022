@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getParticipant, voteOnParticipant } from '../../actions/participants';
+import {
+  getParticipant,
+  voteOnParticipant,
+  deleteParticipant,
+} from '../../actions/participants';
 import { getIcon } from '../../icons';
 import { Link } from 'react-router-dom';
 import Spinner from '../layout/Spinner';
@@ -31,6 +35,17 @@ const ParticipantPostcard = ({ match, history }) => {
       }
     }
   }, [dispatch, match.params.id, history, user]);
+
+  const handleDelete = (e) => {
+    if (
+      window.confirm(
+        `Are you sure you want to delete ${participant.artist}? This action can not be undone.`
+      )
+    ) {
+      dispatch(deleteParticipant(participant._id));
+      history.push('/participants');
+    }
+  };
 
   return loading || participant === null ? (
     <Spinner />
@@ -131,9 +146,12 @@ const ParticipantPostcard = ({ match, history }) => {
                 >
                   <i className='fas fa-edit'></i> Edit
                 </Link>
-                <Link to='/' className='btn btn-danger-reverse'>
+                <button
+                  className='btn btn-danger-reverse'
+                  onClick={handleDelete}
+                >
                   <i className='fas fa-trash'></i> Delete
-                </Link>
+                </button>
               </div>
             ) : null}
           </div>

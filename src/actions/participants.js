@@ -178,3 +178,16 @@ export const voteOnParticipant = (id, vote) => async (dispatch) => {
     });
   }
 };
+
+// Delete participant
+export const deleteParticipant = (id) => async (dispatch) => {
+  try {
+    await axios.delete(`${api}/participants/${id}`);
+    dispatch(setAlert('Participant deleted', 'success'));
+  } catch (err) {
+    dispatch({
+      type: PARTICIPANT_ERROR,
+      payload: 'Something went wrong deleting participant',
+    });
+  }
+};
