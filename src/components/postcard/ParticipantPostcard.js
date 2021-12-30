@@ -43,7 +43,7 @@ const ParticipantPostcard = ({ match, history }) => {
       )
     ) {
       dispatch(deleteParticipant(participant._id));
-      history.push('/participants');
+      history.push('/dashboard');
     }
   };
 
