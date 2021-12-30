@@ -10,8 +10,8 @@ import axios from 'axios';
 import { setAlert } from './alert';
 import { loadUser } from './auth';
 
-const api = 'http://localhost:5200/api';
-// const api = 'https://eurovision-2022-api.herokuapp.com/api';
+// const api = 'http://localhost:5200/api';
+const api = 'https://eurovision-2022-api.herokuapp.com/api';
 const escApi = 'https://eurovision-song-contest-api.herokuapp.com/api/v1';
 
 const config = {
