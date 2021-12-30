@@ -64,10 +64,16 @@ const Login = () => {
               </form>
               <p className='my-1'>
                 Don't have an account?{' '}
-                <Link className='text-primary' to='/register'>
+                <Link className='text-primary hover-text' to='/register'>
                   Sign Up
                 </Link>
               </p>
+              <Link
+                className='text-secondary my-1 hover-text'
+                to='/forgotpassword'
+              >
+                Forgot password
+              </Link>
             </div>
           </div>
         </div>

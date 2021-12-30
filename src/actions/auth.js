@@ -3,6 +3,7 @@ import {
   REGISTER_FAIL,
   USER_LOADED,
   AUTH_ERROR,
+  FORGOT_PASSWORD,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
@@ -11,8 +12,8 @@ import setAuthToken from '../utils/setAuthToken';
 import { setAlert } from './alert';
 import axios from 'axios';
 
-// const api = 'http://localhost:5200/api';
-const api = 'https://eurovision-2022-api.herokuapp.com/api';
+const api = 'http://localhost:5200/api';
+// const api = 'https://eurovision-2022-api.herokuapp.com/api';
 
 // Load User
 export const loadUser = () => async (dispatch) => {
@@ -104,3 +105,67 @@ export const logout = () => (dispatch) => {
     type: LOGOUT,
   });
 };
+
+// Forgot Password
+export const forgotPassword = (formData) => async (dispatch) => {
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  const body = JSON.stringify(formData);
+
+  try {
+    const res = await axios.post(`${api}/auth/forgotpassword`, body, config);
+    dispatch({
+      type: FORGOT_PASSWORD,
+      payload: res.data,
+    });
+  } catch (err) {
+    const errors = err.response.data.errors;
+    if (errors) {
+      errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
+    }
+
+    dispatch({
+      type: AUTH_ERROR,
+    });
+  }
+};
+
+// Reset Password
+export const resetPassword =
+  ({ password }, resettoken) =>
+  async (dispatch) => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+
+    const body = JSON.stringify({ password });
+
+    try {
+      const res = await axios.put(
+        `${api}/auth/resetpassword/${resettoken}`,
+        body,
+        config
+      );
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: res.data,
+      });
+
+      dispatch(loadUser());
+    } catch (err) {
+      const errors = err.response.data.errors;
+      if (errors) {
+        errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
+      }
+
+      dispatch({
+        type: AUTH_ERROR,
+      });
+    }
+  };

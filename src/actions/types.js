@@ -7,6 +7,7 @@ export const AUTH_ERROR = 'AUTH_ERROR';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const LOGOUT = 'LOGOUT';
+export const FORGOT_PASSWORD = 'FORGOT_PASSWORD';
 export const GET_COUNTRY = 'GET_COUNTRY';
 export const GET_COUNTRIES = 'GET_COUNTRIES';
 export const COUNTRY_ERROR = 'COUNTRY_ERROR';

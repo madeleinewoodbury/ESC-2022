@@ -25,6 +25,8 @@ import Winners from './components/participants/Winners';
 import NotFound from './components/layout/NotFound';
 import AddParticipant from './components/admin/AddParticipant';
 import EditParticipant from './components/admin/EditParticipant';
+import ForgotPassword from './components/auth/ForgotPassword';
+import ResetPassword from './components/auth/ResetPassword';
 import './App.css';
 
 if (localStorage.token) {
@@ -70,6 +72,12 @@ const App = () => {
             exact
             path='/edit-participant/:id'
             component={EditParticipant}
+          />
+          <Route exact path='/forgotpassword' component={ForgotPassword} />
+          <Route
+            exact
+            path='/resetpassword/:resettoken'
+            component={ResetPassword}
           />
           <Route component={NotFound} />
         </Switch>

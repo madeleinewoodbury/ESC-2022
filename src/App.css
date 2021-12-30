@@ -101,6 +101,11 @@ li {
   margin-bottom: 1rem;
 }
 
+.medium {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
 .small-text {
   color: rgb(110, 110, 110);
   font-size: 0.8rem;
@@ -120,6 +125,10 @@ li {
 
 .text-white {
   color: #fff;
+}
+
+.hover-text:hover {
+  text-decoration: underline;
 }
 
 .btn-container {
