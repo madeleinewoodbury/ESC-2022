@@ -17,7 +17,7 @@ const escApi = 'https://eurovision-song-contest-api.herokuapp.com/api/v1';
 const config = {
   headers: {
     'Content-Type': 'application/json',
-    'x-auth-token': localStorage.token,
+    // 'x-auth-token': localStorage.token,
   },
 };
 
