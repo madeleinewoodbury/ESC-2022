@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { forgotPassword } from '../../actions/auth';
 import { Redirect } from 'react-router-dom';
 
-const ForgotPassword = () => {
+const ForgotPassword = ({ history }) => {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
   const { isAuthenticated } = auth;
@@ -11,8 +11,7 @@ const ForgotPassword = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(forgotPassword(formData));
-    alert('Check your email');
+    dispatch(forgotPassword(formData, history));
   };
 
   if (isAuthenticated) {

@@ -107,7 +107,7 @@ export const logout = () => (dispatch) => {
 };
 
 // Forgot Password
-export const forgotPassword = (formData) => async (dispatch) => {
+export const forgotPassword = (formData, history) => async (dispatch) => {
   const config = {
     headers: {
       'Content-Type': 'application/json',
@@ -120,8 +120,9 @@ export const forgotPassword = (formData) => async (dispatch) => {
     const res = await axios.post(`${api}/auth/forgotpassword`, body, config);
     dispatch({
       type: FORGOT_PASSWORD,
-      payload: res.data,
+      payload: res.data.data,
     });
+    history.push('/emailsent');
   } catch (err) {
     const errors = err.response.data.errors;
     if (errors) {

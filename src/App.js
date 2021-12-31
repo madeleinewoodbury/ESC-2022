@@ -27,6 +27,7 @@ import AddParticipant from './components/admin/AddParticipant';
 import EditParticipant from './components/admin/EditParticipant';
 import ForgotPassword from './components/auth/ForgotPassword';
 import ResetPassword from './components/auth/ResetPassword';
+import EmailSent from './components/auth/EmailSent';
 import './App.css';
 
 if (localStorage.token) {
@@ -79,6 +80,7 @@ const App = () => {
             path='/resetpassword/:resettoken'
             component={ResetPassword}
           />
+          <Route exact path='/emailsent' component={EmailSent} />
           <Route component={NotFound} />
         </Switch>
       </Fragment>
