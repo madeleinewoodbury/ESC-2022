@@ -97,12 +97,7 @@ export const editParticipant = (formData, history, id) => async (dispatch) => {
       lyrics: formData.lyrics,
       music: formData.music,
       bio: bio,
-      semifinal:
-        formData.semifinal === '1'
-          ? 'First Semifinal'
-          : formData.semifinal === '2'
-          ? 'Second Semifinal'
-          : 'No semifinal',
+      semifinal: formData.semifinal,
       final: formData.final,
       video: formData.video,
       points: formData.points,

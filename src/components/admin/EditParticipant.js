@@ -17,7 +17,7 @@ const EditParticipant = ({ match, history }) => {
     artist: '',
     song: '',
     country: '',
-    semifinal: '',
+    semifinal: 'No semifinal',
     final: false,
     lyrics: '',
     music: '',
@@ -33,7 +33,10 @@ const EditParticipant = ({ match, history }) => {
       song: loading || !participant.song ? '' : participant.song,
       country:
         loading || !participant.country._id ? '' : participant.country._id,
-      semifinal: loading || !participant.semifinal ? '' : participant.semifinal,
+      semifinal:
+        loading || !participant.semifinal
+          ? 'No semifinal'
+          : participant.semifinal,
       final: loading || participant.final,
       lyrics: loading || !participant.lyrics ? '' : participant.lyrics,
       music: loading || !participant.music ? '' : participant.music,
@@ -117,11 +120,11 @@ const EditParticipant = ({ match, history }) => {
                     value={formData.semifinal}
                     onChange={(e) => handleChange(e)}
                   >
-                    <option value={0}>No Semifnals</option>
-                    <option key={1} value={1}>
+                    <option value='No Semifinal'>No Semifnal</option>
+                    <option key={1} value='First Semifinal'>
                       First Semifinal
                     </option>
-                    <option key={2} value={2}>
+                    <option key={2} value={'Second Semifinal'}>
                       Second Semifinal
                     </option>
                   </select>
