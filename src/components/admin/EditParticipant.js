@@ -24,6 +24,7 @@ const EditParticipant = ({ match, history }) => {
     bio: '',
     image: '',
     video: '',
+    musicVideo: '',
     points: 0,
   });
 
@@ -43,6 +44,8 @@ const EditParticipant = ({ match, history }) => {
       bio: loading || !participant.bio ? '' : participant.bio,
       image: loading || !participant.image ? '' : participant.image,
       video: loading || !participant.video ? '' : participant.video,
+      musicVideo:
+        loading || !participant.musicVideo ? '' : participant.musicVideo,
     });
   };
 
@@ -185,9 +188,18 @@ const EditParticipant = ({ match, history }) => {
                 <div className='form-group'>
                   <input
                     type='text'
-                    placeholder='Video id'
+                    placeholder='Live Performance video id'
                     name='video'
                     value={formData.video}
+                    onChange={(e) => handleChange(e)}
+                  />
+                </div>
+                <div className='form-group'>
+                  <input
+                    type='text'
+                    placeholder='Music video id'
+                    name='musicVideo'
+                    value={formData.musicVideo}
                     onChange={(e) => handleChange(e)}
                   />
                 </div>

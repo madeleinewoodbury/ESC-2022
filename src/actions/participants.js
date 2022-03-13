@@ -10,7 +10,7 @@ import axios from 'axios';
 import { setAlert } from './alert';
 import { loadUser } from './auth';
 
-// const api = 'http://localhost:5200/api';
+//const api = 'http://localhost:5200/api';
 const api = 'https://eurovision-2022-api.herokuapp.com/api';
 const escApi = 'https://eurovision-song-contest-api.herokuapp.com/api/v1';
 
@@ -55,6 +55,7 @@ export const addParticipant = (formData, history) => async (dispatch) => {
           : 'No semifinal',
       final: formData.final,
       video: formData.video,
+      musicVideo: formData.musicVideo,
       points: formData.points,
     };
 
@@ -100,6 +101,7 @@ export const editParticipant = (formData, history, id) => async (dispatch) => {
       semifinal: formData.semifinal,
       final: formData.final,
       video: formData.video,
+      musicVideo: formData.musicVideo,
       points: formData.points,
     };
 

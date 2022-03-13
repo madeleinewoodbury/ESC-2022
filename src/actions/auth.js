@@ -12,7 +12,7 @@ import setAuthToken from '../utils/setAuthToken';
 import { setAlert } from './alert';
 import axios from 'axios';
 
-// const api = 'http://localhost:5200/api';
+//const api = 'http://localhost:5200/api';
 const api = 'https://eurovision-2022-api.herokuapp.com/api';
 
 // Load User

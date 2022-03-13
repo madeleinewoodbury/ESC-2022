@@ -22,6 +22,7 @@ const AddParticipant = ({ history }) => {
     points: 0,
     image: '',
     video: '',
+    musicVideo: '',
   });
 
   useEffect(() => {
@@ -158,6 +159,15 @@ const AddParticipant = ({ history }) => {
                     placeholder='Video id'
                     name='video'
                     value={formData.video}
+                    onChange={(e) => handleChange(e)}
+                  />
+                </div>
+                <div className='form-group'>
+                  <input
+                    type='text'
+                    placeholder='Music video id'
+                    name='musicVideo'
+                    value={formData.musicVideo}
                     onChange={(e) => handleChange(e)}
                   />
                 </div>

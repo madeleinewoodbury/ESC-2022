@@ -173,6 +173,17 @@ const ParticipantPostcard = ({ match, history }) => {
               ></iframe>
             </div>
           )}
+          {participant.musicVideo && (
+            <div className='postcard-video'>
+              <iframe
+                title={participant.artist}
+                src={`https://www.youtube.com/embed/${participant.musicVideo}`}
+                frameBorder='0'
+                allow='accelerometer; encrypted-media; gyroscope; picture-in-picture'
+                allowFullScreen
+              ></iframe>
+            </div>
+          )}
         </div>
       </div>
     </div>
